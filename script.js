@@ -54,7 +54,7 @@ function initCountdown() {
   const secondsElement = document.getElementById("seconds");
 
   // Cambia aquí la fecha de la boda.
-  const eventDate = new Date("December 20, 2026 17:00:00").getTime();
+  const eventDate = new Date("Octuber 10, 2026 15:00:00").getTime();
 
   function updateCountdown() {
     const currentDate = new Date().getTime();
