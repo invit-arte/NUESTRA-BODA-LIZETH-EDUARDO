@@ -535,6 +535,180 @@ body.opening-active {
   font-size: 1.8rem;
   line-height: 1;
 }
+/* =========================
+   GALERÍA DE FOTOS
+========================= */
+
+.section-gallery {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #1d1d1d;
+}
+
+.gallery-carousel,
+.gallery-inner,
+.gallery-inner .carousel-item {
+  width: 100%;
+  min-height: 100svh;
+}
+
+.gallery-inner .carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100svh;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1);
+}
+
+/* Zoom suave únicamente en la foto activa */
+.gallery-inner .carousel-item.active .gallery-image {
+  animation: galleryZoom 12s ease-in-out forwards;
+}
+
+
+/* =========================
+   INDICADORES
+========================= */
+
+.gallery-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 28px;
+  left: 0;
+  z-index: 5;
+
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+}
+
+.gallery-indicators [data-bs-target] {
+  width: 8px;
+  height: 8px;
+
+  margin: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+
+  background: transparent;
+
+  opacity: 0.8;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.gallery-indicators .active {
+  background: white;
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+
+/* =========================
+   FLECHAS
+========================= */
+
+.gallery-control {
+  width: 16%;
+  opacity: 1;
+}
+
+.gallery-arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  line-height: 1;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+
+  transition:
+    background 0.3s ease,
+    transform 0.25s ease;
+}
+
+.gallery-control:hover .gallery-arrow {
+  background: rgba(0, 0, 0, 0.38);
+  transform: scale(1.06);
+}
+
+.gallery-control:active .gallery-arrow {
+  transform: scale(0.92);
+}
+
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes galleryZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 576px) {
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.7rem;
+  }
+
+  .gallery-control {
+    width: 18%;
+  }
+
+  .gallery-indicators {
+    bottom: 22px;
+  }
+}
 
 /* =========================
    FOTO COMPLETA
@@ -854,70 +1028,142 @@ transform:scale(1.06);
   background-repeat: repeat-y;
   background-size: cover;
 }
-/* =========================
-   SOLO ADULTOS
-========================= */
 
-.section-adults {
-
-    position: relative;
-
-    width: 100%;
-
-    min-height: 360px;
-
-    padding: 90px 30px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-image: url("images/itinerario.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
-
-.adults-content{
+.dress-palette{
 
     width:100%;
-    max-width:520px;
 
-    text-align:center;
+    max-width:320px;
 
-}
+    margin-top:30px;
 
-.adults-title{
+    border-radius:10px;
 
-    margin-bottom:28px;
-
-    color:#034397;
-
-    font-family:Georgia, "Times New Roman", serif;
-
-    font-size:clamp(2rem,8vw,3rem);
-
-    font-weight:400;
-
-    font-variant:small-caps;
+    object-fit:contain;
 
 }
 
-.adults-text{
+/* =========================
+   COMPARTIR FOTOGRAFÍAS
+========================= */
 
-    color:#6f6965;
+.section-photo-upload {
+  position: relative;
+  width: 100%;
+  min-height: 720px;
 
-    font-family:Georgia, "Times New Roman", serif;
+  padding: 75px 26px;
 
-    font-size:clamp(1rem,4vw,1.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    font-style:italic;
-
-    line-height:1.9;
-
+  background-image: url("images/fondo-fotos-invitados.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+.photo-upload-card {
+  position: relative;
+
+  width: min(100%, 430px);
+  min-height: 560px;
+
+  padding: 55px 42px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+}
+
+.photo-upload-title {
+  margin-bottom: 24px;
+
+  color: #c18d5e;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-weight: 400;
+  font-variant: small-caps;
+  line-height: 0.95;
+}
+
+.photo-upload-title span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #55504d;
+
+  font-family: "Brush Script MT", cursive;
+  font-size: clamp(2rem, 8vw, 2.7rem);
+  font-variant: normal;
+  font-style: italic;
+}
+
+.photo-upload-text {
+  width: 100%;
+  max-width: 330px;
+
+  margin-bottom: 28px;
+
+  color: #77716c;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.85rem, 3.5vw, 1rem);
+  font-style: italic;
+  line-height: 1.75;
+}
+
+.photo-upload-qr {
+  width: clamp(170px, 50vw, 215px);
+  height: auto;
+
+  margin-bottom: 28px;
+
+  object-fit: contain;
+}
+
+.photo-upload-button {
+  width: min(100%, 235px);
+
+  padding: 12px 20px;
+
+  border: 1px solid #8d8984;
+
+  color: #4f4a47;
+  background: transparent;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.photo-upload-button:hover {
+  color: white;
+  background: #8d9369;
+}
+
+.photo-upload-button:active {
+  transform: scale(0.96);
+}
 
 /* =========================
    TARJETA DE REGALOS
