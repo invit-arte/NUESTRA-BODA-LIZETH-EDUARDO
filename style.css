@@ -232,7 +232,7 @@ body.opening-active {
   justify-content: center;
   align-items: center;
 
-  background-image: url("images/seccion2_2.png");
+  background-image: url("images/FONDO1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -805,8 +805,8 @@ transform:scale(1.06);
 }
 
 .event-icon {
-   width:220px;
-    height:220px;
+   width:185px;
+    height:185px;
 
     margin-bottom:22px;
 
@@ -822,9 +822,9 @@ transform:scale(1.06);
   color: #c8b89e;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size:clamp(2.3rem,8vw,3rem);
+  font-size:clamp(2.3rem,4vw,3rem);
 
-    margin-bottom:18px;
+    margin-bottom:16px;
   font-weight: 400;
   font-variant: small-caps;
   letter-spacing: 0.04rem;
@@ -1351,6 +1351,86 @@ transform:scale(1.06);
 
 .dress-description {
   margin-bottom: 0;
+}
+/*======================
+      COLORES
+=======================*/
+
+.dress-colors{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+margin-top:25px;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+.dress-color{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.color-circle{
+
+width:34px;
+
+height:34px;
+
+border-radius:50%;
+
+border:2px solid white;
+
+box-shadow:0 4px 10px rgba(0,0,0,.10);
+
+}
+
+.dress-color small{
+
+margin-top:8px;
+
+font-size:.70rem;
+
+color:#666;
+
+font-family:Georgia,serif;
+
+}
+.palette-button{
+
+display:inline-block;
+
+padding:13px 34px;
+
+border:1px solid #8E8A84;
+
+text-decoration:none;
+
+color:#4D4945;
+
+transition:.3s;
+
+font-size:.82rem;
+
+}
+
+.palette-button:hover{
+
+background:#8F9369;
+
+color:white;
+
 }
 
 /*=========================
