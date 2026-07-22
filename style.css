@@ -459,7 +459,7 @@ body.opening-active {
   justify-content: center;
   align-items: center;
 
-  background-image: url("images/FONDOHOJAS.png");
+  background-image: url("images/FONDOS2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -776,83 +776,98 @@ transform:scale(1.06);
   align-items: center;
   gap:90px;
 
-  background-image: url("images/FONDOHOJAS.png");
+  background-image: url("images/FONDOS2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .event-card {
-  position: relative;
+  width: min(100%, 430px);
+  min-height: 560px;
 
-   width: min(100%, 430px);
-
-    min-height: 560px;
-
-    padding: 60px 45px 55px;
+  padding: 50px 38px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.97);
-
-  box-shadow:
-    0 25px 45px rgba(0,0,0,.12);
-
   text-align: center;
 }
 
-.event-icon {
-   width:185px;
-    height:185px;
+/* ICONO MÁS PEQUEÑO */
 
-    margin-bottom:22px;
+.event-icon {
+  width: 95px;
+  height: auto;
+
+  margin-bottom: 28px;
 
   object-fit: contain;
 }
+
 
 .event-icon-rings {
   width: 180px;
   height: 180px;
 }
-
 .event-title {
+  max-width: 330px;
+
+  margin-bottom: 28px;
+
   color: #c8b89e;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size:clamp(2.3rem,4vw,3rem);
-
-    margin-bottom:16px;
+  font-size: clamp(2rem, 7vw, 2.8rem);
   font-weight: 400;
-  font-variant: small-caps;
-  letter-spacing: 0.04rem;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .event-time {
+  max-width: 320px;
+
+  margin-bottom: 42px;
 
   color: #817b76;
 
   font-family: Georgia, "Times New Roman", serif;
-  font-size:1.4rem;
-
-    margin-bottom:22px;
+  font-size: clamp(1.15rem, 4.8vw, 1.5rem);
   font-style: italic;
+  line-height: 1.55;
+  text-align: center;
 }
+
+/* HORA */
 
 .event-place {
-     color: #817b76;
+  margin-bottom: 28px;
 
-  font-family: "Brush Script MT", cursive;
-  font-size:2rem;
+  color: #817b76;
 
-    line-height:1.35;
-
-    margin-bottom:22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 7vw, 2.25rem);
   font-style: italic;
+  line-height: 1;
 }
 
+/* BOTÓN */
+
+.event-map-button {
+  width: min(100%, 280px);
+
+  padding: 13px 20px;
+
+  border: 1px solid #8c8985;
+
+  color: #4f4b48;
+  background: transparent;
+
+  font-size: 0.95rem;
+  text-decoration: none;
+}
 .event-address {
 
   color: #8d8883;
@@ -1023,7 +1038,7 @@ transform:scale(1.06);
   align-items: center;
   gap: 55px;
 
-  background-image: url("images/FONDOHOJAS.png");
+  background-image: url("images/FONDOS2.png");
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
@@ -1352,87 +1367,78 @@ transform:scale(1.06);
 .dress-description {
   margin-bottom: 0;
 }
-/*======================
-      COLORES
-=======================*/
+/* =========================
+   COLORES DRESS CODE
+========================= */
 
-.dress-colors{
+.dress-colors {
+  width: 100%;
+  max-width: 330px;
 
-display:flex;
+  margin: 24px auto 28px;
 
-justify-content:center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  justify-items: center;
 
-gap:18px;
-
-margin-top:25px;
-
-margin-bottom:30px;
-
-flex-wrap:wrap;
-
+  gap: 6px;
 }
 
-.dress-color{
+.dress-color {
+  width: 100%;
+  min-width: 0;
 
-display:flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-flex-direction:column;
-
-align-items:center;
-
+  text-align: center;
 }
 
-.color-circle{
+.color-circle {
+  display: block;
+  flex-shrink: 0;
 
-width:34px;
+  width: 32px;
+  height: 32px;
 
-height:34px;
+  border-radius: 50%;
 
-border-radius:50%;
-
-border:2px solid white;
-
-box-shadow:0 4px 10px rgba(0,0,0,.10);
-
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.dress-color small{
+.dress-color small {
+  display: block;
 
-margin-top:8px;
+  width: 100%;
+  margin-top: 8px;
 
-font-size:.70rem;
+  color: #66615d;
 
-color:#666;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.52rem, 2.3vw, 0.68rem);
+  line-height: 1.2;
 
-font-family:Georgia,serif;
-
-}
-.palette-button{
-
-display:inline-block;
-
-padding:13px 34px;
-
-border:1px solid #8E8A84;
-
-text-decoration:none;
-
-color:#4D4945;
-
-transition:.3s;
-
-font-size:.82rem;
-
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.palette-button:hover{
+@media (max-width: 380px) {
+  .dress-colors {
+    max-width: 290px;
+    gap: 3px;
+  }
 
-background:#8F9369;
+  .color-circle {
+    width: 27px;
+    height: 27px;
+  }
 
-color:white;
-
+  .dress-color small {
+    font-size: 0.52rem;
+  }
 }
-
 /*=========================
         ZOOM
 =========================*/
@@ -1559,7 +1565,7 @@ color:white;
   align-items: center;
   gap: 65px;
 
-  background-image: url("images/FONDOHOJAS.png");
+  background-image: url("images/FONDOS2.png");
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
