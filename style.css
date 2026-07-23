@@ -93,7 +93,7 @@ body.opening-active {
   position: absolute;
   inset: 0;
 
-  background-image: url("images/INTRO1.png");
+  background-image: url("images/INTRO2.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -107,10 +107,10 @@ body.opening-active {
 
   /* Ajustaremos estos valores según tu diseño */
   left: 50%;
-  top: 62%;
+  top: 50%;
 
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
 
   transform: translate(-50%, -50%);
 
@@ -272,16 +272,7 @@ body.opening-active {
   animation: phraseFloat 5s ease-in-out 1.1s infinite;
 }
 
-@keyframes phraseFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
 
-  50% {
-    transform: translateY(-5px);
-  }
-}
 
 .phrase-monogram {
   width: clamp(10px, 30vw, 300px);
@@ -675,42 +666,6 @@ body.opening-active {
 
 
 /* =========================
-   ANIMACIÓN
-========================= */
-
-@keyframes galleryZoom {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.06);
-  }
-}
-
-
-/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 576px) {
-  .gallery-arrow {
-    width: 36px;
-    height: 36px;
-
-    font-size: 1.7rem;
-  }
-
-  .gallery-control {
-    width: 18%;
-  }
-
-  .gallery-indicators {
-    bottom: 22px;
-  }
-}
-
-/* =========================
    FOTO COMPLETA
 ========================= */
 
@@ -741,21 +696,6 @@ background-size:cover;
 background-position:center;
 
 animation:photoZoom 12s ease-in-out infinite alternate;
-
-}
-@keyframes photoZoom{
-
-from{
-
-transform:scale(1);
-
-}
-
-to{
-
-transform:scale(1.06);
-
-}
 
 }
 
@@ -1423,22 +1363,44 @@ transform:scale(1.06);
   white-space: normal;
   overflow-wrap: anywhere;
 }
+.palette-button{
 
-@media (max-width: 380px) {
-  .dress-colors {
-    max-width: 290px;
-    gap: 3px;
-  }
+    display:inline-flex;
 
-  .color-circle {
-    width: 27px;
-    height: 27px;
-  }
+    justify-content:center;
+    align-items:center;
 
-  .dress-color small {
-    font-size: 0.52rem;
-  }
+    width:240px;
+
+    margin-top:25px;
+
+    padding:14px 18px;
+
+    border:1px solid #8E8A84;
+
+    background:transparent;
+
+    color:#4D4945;
+
+    text-decoration:none;
+
+    font-family:Georgia, serif;
+
+    font-size:.9rem;
+
+    transition:.3s;
+
 }
+
+.palette-button:hover{
+
+    background:#8F9369;
+
+    color:white;
+
+}
+
+
 /*=========================
         ZOOM
 =========================*/
@@ -1565,7 +1527,7 @@ transform:scale(1.06);
   align-items: center;
   gap: 65px;
 
-  background-image: url("images/FONDOS2.png");
+  background-image: url("images/FINAL.png");
   background-position: center;
   background-repeat: repeat-y;
   background-size: cover;
@@ -1773,7 +1735,7 @@ transform:scale(1.06);
 
     min-height: 100svh;
 
-    background-image: url("images/final.jpg");
+    background-image: url("images/");
 
     background-position: center;
     background-repeat: no-repeat;
@@ -1808,21 +1770,7 @@ transform:scale(1.06);
     animation:finalZoom 18s ease-in-out infinite alternate;
 
 }
-@keyframes finalZoom{
 
-    from{
-
-        transform:scale(1);
-
-    }
-
-    to{
-
-        transform:scale(1.05);
-
-    }
-
-}
 /* =========================
    BOTÓN DE MÚSICA
 ========================= */
@@ -1901,6 +1849,329 @@ transform:scale(1.06);
   opacity: 1;
   transform: translateY(0) scale(1);
 }
+/* ======================== MODAL DATOS BANCARIOS
+========================= */
+
+.bank-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bank-modal .modal-dialog {
+  width: calc(100% - 34px);
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bank-modal-content {
+  position: relative;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(239, 230, 214, 0.97),
+      rgba(218, 202, 178, 0.97)
+    );
+
+  box-shadow:
+    0 24px 65px rgba(54, 44, 34, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+
+  overflow: hidden;
+}
+
+.bank-modal-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.42),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.bank-modal-body {
+  position: relative;
+  z-index: 2;
+
+  padding: 58px 34px 38px;
+
+  text-align: center;
+}
+
+.bank-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: #665b4f;
+  background: rgba(255, 255, 255, 0.45);
+
+  font-family: Arial, sans-serif;
+  font-size: 1.7rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.bank-modal-close:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: rotate(90deg);
+}
+
+.bank-modal-title {
+  margin-bottom: 8px;
+
+  color: #756552;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 7vw, 2.5rem);
+  font-weight: 400;
+  font-variant: small-caps;
+}
+
+.bank-modal-subtitle {
+  margin-bottom: 30px;
+
+  color: #8f7c66;
+
+  font-family: "Brush Script MT", cursive;
+  font-size: clamp(1.7rem, 6vw, 2.2rem);
+  font-style: italic;
+}
+
+.bank-data {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bank-data-row {
+  padding: 15px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  border: 1px solid rgba(117, 101, 82, 0.22);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.bank-data-row span {
+  color: #7f7163;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.bank-data-row strong {
+  color: #4f463d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  overflow-wrap: anywhere;
+}
+
+.bank-modal-note {
+  margin-top: 26px;
+
+  color: #7f7163;
+
+  font-size: 0.84rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+/* =====================================
+   TARJETA MARRIAGE LICENSE — AJUSTE FINAL
+===================================== */
+
+.section-events {
+  padding: 70px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.license-card {
+  position: relative;
+
+  width: min(calc(100% - 28px), 430px);
+  min-height: 650px;
+
+  padding: 55px 36px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 20px 42px rgba(44, 39, 32, 0.16),
+    0 5px 12px rgba(44, 39, 32, 0.08);
+
+  text-align: center;
+}
+
+/* Icono */
+.license-card .event-icon {
+  width: 70px;
+  height: auto;
+  max-height: 110px;
+
+  margin: 0 0 22px;
+
+  object-fit: contain;
+}
+
+/* Título */
+.license-card .event-title {
+  width: 100%;
+  max-width: 320px;
+
+  margin: 0 0 24px;
+
+  color: #c7b798;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 6.2vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Hora */
+.license-card .event-place {
+  margin: 0 0 26px;
+
+  color: #77716d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 5.8vw, 1.9rem);
+  font-style: italic;
+  line-height: 1;
+}
+
+/* Dirección */
+.license-card .event-time {
+  width: 100%;
+  max-width: 280px;
+
+  margin: 0 0 34px;
+
+  color: #77716d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(0.95rem, 3.8vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Botón */
+.license-card .event-map-button {
+  width: min(100%, 260px);
+
+  padding: 13px 20px;
+
+  border: 1px solid #8d8984;
+
+  color: #4f4a47;
+  background: transparent;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+/* TARJETA BLANCA DE CEREMONIA */
+
+.section-events {
+  padding: 70px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-card.license-card {
+  position: relative;
+  z-index: 2;
+
+  width: min(calc(100% - 24px), 430px);
+  min-height: 650px;
+
+  padding: 55px 36px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Fondo blanco obligatorio */
+  background-color: #ffffff;
+  background-image: none;
+
+  opacity: 1;
+
+  box-shadow:
+    0 20px 42px rgba(44, 39, 32, 0.18),
+    0 5px 12px rgba(44, 39, 32, 0.08);
+
+  text-align: center;
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 380px) {
+  .license-card {
+    width: calc(100% - 22px);
+    min-height: 580px;
+    padding: 45px 26px;
+  }
+
+  .license-card .event-icon {
+    width: 58px;
+  }
+
+  .license-card .event-title {
+    max-width: 270px;
+    font-size: 1.55rem;
+  }
+
+  .license-card .event-time {
+    font-size: 0.92rem;
+  }
+}
 
 
 /* =========================
@@ -1975,4 +2246,103 @@ transform:scale(1.06);
   .music-button {
     left: calc(50% - 220px);
   }
+}
+
+@keyframes finalZoom{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.05);
+
+    }
+
+}
+/* =========================
+   colore dress code
+========================= */
+@media (max-width: 380px) {
+  .dress-colors {
+    max-width: 290px;
+    gap: 3px;
+  }
+
+  .color-circle {
+    width: 27px;
+    height: 27px;
+  }
+
+  .dress-color small {
+    font-size: 0.52rem;
+  }
+}
+
+
+@keyframes phraseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
+@keyframes galleryZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 576px) {
+  .gallery-arrow {
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.7rem;
+  }
+
+  .gallery-control {
+    width: 18%;
+  }
+
+  .gallery-indicators {
+    bottom: 22px;
+  }
+}
+
+
+@keyframes photoZoom{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.06);
+
+}
+
 }
