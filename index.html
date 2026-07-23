@@ -44,7 +44,7 @@
     playsinline
     preload="auto"
   >
-    <source src="images/SOBREINTRO.mp4" type="video/mp4">
+    <source src="images/SOBREINTRO2.mp4" type="video/mp4">
   </video>
 
 </section>
@@ -131,7 +131,7 @@
 <!-- PADRES Y PADRINOS -->
 <section class="section section-family" id="familia">
 
-  <article class="family-card reveal-card">
+  <article class="event-card license-card reveal-card">
 
     <div class="family-group">
       <h2 class="family-title">
@@ -176,11 +176,6 @@
       <h2 class="family-title">
         Nuestros Testigos
       </h2>
-
-      <p class="family-role">
-        Padrinos de velación
-      </p>
-
       <p class="family-name">
         Itzel Yazmín Aguirre Rodríguez
       </p>
@@ -324,7 +319,7 @@
 <section class="section section-events" id="eventos">
 
   <!-- CEREMONIA -->
-  <article class="event-card reveal-card">
+  <article class="event-card license-card reveal-card">
 
     <img
       class="event-icon"
@@ -516,20 +511,25 @@
 Si en tus deseos está realizarlo; te dejamos nuestro sobre digital”
     </p>
 
-    <a
-      class="detail-button"
-      href="https://www.liverpool.com.mx/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Liverpool
-    </a>
+    <button
+  type="button"
+  class="detail-button"
+  data-bs-toggle="modal"
+  data-bs-target="#bankModal"
+>
+  Wells Fargo
+</button>
 
-    <p class="event-number">
-      Evento: 00000000
+    <!--<p class="event-number">
+      Número de cuenta: 2021893892
+      <br>
+      Número de ruta: 121000248
+      <br>
+      BBVA:
+      4152 3138 3107 9012
     </p>
 
-    <!--<img
+    <img
       class="envelope-icon"
       src="images/SOBRE.png"
       alt=""
@@ -795,6 +795,70 @@ Inspírate
 
 
   </main>
+
+  <!-- MODAL DATOS BANCARIOS -->
+<div
+  class="modal fade bank-modal"
+  id="bankModal"
+  tabindex="-1"
+  aria-labelledby="bankModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content bank-modal-content">
+
+      <button
+        type="button"
+        class="bank-modal-close"
+        data-bs-dismiss="modal"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div class="modal-body bank-modal-body">
+
+        <h2
+          class="bank-modal-title"
+          id="bankModalLabel"
+        >
+          Datos de cuenta
+        </h2>
+
+        <p class="bank-modal-subtitle">
+          Wells Fargo
+        </p>
+
+        <div class="bank-data">
+
+          <div class="bank-data-row">
+            <span>Número de cuenta</span>
+            <strong>2021893892</strong>
+          </div>
+
+          <div class="bank-data-row">
+            <span>Número de ruta</span>
+            <strong>121000248</strong>
+          </div>
+
+          <div class="bank-data-row">
+            <span>BBVA:</span>
+            <strong>4152 3138 3107 9012</strong>
+          </div>
+
+        </div>
+
+        <p class="bank-modal-note">
+          Gracias por acompañarnos en este momento tan especial.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
   <!-- CANCIÓN -->
   <audio id="backgroundMusic" loop>
